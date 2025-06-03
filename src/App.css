@@ -99,6 +99,7 @@ body {
 
 /* Specific column width control */
 .slno-header,
+
 .slno-cell {
   width: 50px;
   justify-content: center;
