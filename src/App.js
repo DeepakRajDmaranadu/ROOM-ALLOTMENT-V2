@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
-import "./App.css";
+import "./App.css"; // Optional if using your own CSS
 
 export default function App() {
   const [room, setRoom] = useState("");
@@ -14,8 +14,10 @@ export default function App() {
       alert("Please fill all fields");
       return;
     }
+
     setEntries([...entries, { room, time, course, studentId }]);
 
+    // Auto-increment student ID
     const match = studentId.match(/^(.*?)(\d+)$/);
     if (match) {
       const prefix = match[1];
@@ -70,6 +72,7 @@ export default function App() {
         }
         sheetData.push(rowData);
       }
+
       sheetData.push([]);
     });
 
@@ -154,8 +157,12 @@ export default function App() {
                       const student = col[rowIndex];
                       return (
                         <div className="table-row" key={rowIndex}>
-                          <div className="table-cell slno-cell">{student ? rowIndex + 1 + colIndex * maxRows : ""}</div>
-                          <div className="table-cell id-cell">{student ? student.studentId : ""}</div>
+                          <div className="table-cell slno-cell">
+                            {student ? rowIndex + 1 + colIndex * maxRows : ""}
+                          </div>
+                          <div className="table-cell id-cell">
+                            {student ? student.studentId : ""}
+                          </div>
                           <div className="table-cell action-cell">
                             {student && (
                               <button
@@ -177,7 +184,9 @@ export default function App() {
         })}
       </div>
 
-      <button className="download-btn" onClick={handleDownload}>Download Excel</button>
+      <button className="download-btn" onClick={handleDownload}>
+        Download Excel
+      </button>
     </div>
   );
 }
