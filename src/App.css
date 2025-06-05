@@ -1,3 +1,4 @@
+/* App.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -16,12 +17,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #1f1f1f;
+  background-color:#121212;
   padding: 10px 0;
   z-index: 1000;
-  border-bottom: 2px solid fuchsia;
+  /* border-bottom: 2px solid fuchsia; */
   text-align: center;
-  box-shadow: 0 2px 8px rgba(255, 0, 255, 0.2);
+  /* box-shadow: 0 2px 8px rgba(255, 0, 255, 0.2); */
 }
 
 .form {
@@ -66,16 +67,36 @@ body {
 }
 
 .room {
-  background-color: #1f1f1f;
   margin-bottom: 30px;
   padding: 20px;
   border-radius: 10px;
-  border-left: 4px solid fuchsia;
   transition: transform 0.2s ease;
 }
 
 .room:hover {
   transform: scale(1.01);
+}
+
+/* Different colors for rooms */
+.pink {
+  background-color: #292030;
+  border-left: 4px solid hotpink;
+}
+.blue {
+  background-color: #1f2633;
+  border-left: 4px solid #3399ff;
+}
+.green {
+  background-color: #1f3326;
+  border-left: 4px solid #66cc66;
+}
+.orange {
+  background-color: #332a1f;
+  border-left: 4px solid orange;
+}
+.purple {
+  background-color: #2b1f33;
+  border-left: 4px solid violet;
 }
 
 .room-header {
@@ -141,7 +162,7 @@ body {
 }
 
 .delete-btn {
-  background-color: red;
+  background-color:red;
   color: white;
   padding: 4px 8px;
   border: none;
@@ -171,7 +192,24 @@ body {
 }
 
 @media (max-width: 480px) {
-  .room{
+  .room {
     margin-top: 300px;
   }
+}
+
+.clear-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+
+.clear-btn:hover {
+  background-color: darkred;
 }
