@@ -54,7 +54,7 @@ export default function App() {
     const wb = XLSX.utils.book_new();
     const sheetData = [];
     const merges = [];
-    const wsCellStyles = {};
+    // const wsCellStyles = {};
 
     Object.entries(grouped).forEach(([room, courseObj]) => {
       const courses = Object.entries(courseObj);
