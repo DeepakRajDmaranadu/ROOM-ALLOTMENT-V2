@@ -1,9 +1,11 @@
-/* App.css */
+/* ===================== */
+/* General Layout Styles */
+/* ===================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background-color: #0d1b2a;
+  color: #e0f0ff;
 }
 
 .container {
@@ -12,17 +14,19 @@ body {
   margin: 0 auto;
 }
 
+/* ================== */
+/* Header & Form Area */
+/* ================== */
 .form-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color:#121212;
+  background-color: #1b263b;
   padding: 10px 0;
   z-index: 1000;
-  /* border-bottom: 2px solid fuchsia; */
   text-align: center;
-  /* box-shadow: 0 2px 8px rgba(255, 0, 255, 0.2); */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .form {
@@ -44,23 +48,33 @@ body {
 
 .form input {
   width: 160px;
+  border: 1px solid #415a77;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #1e2a3c;
+  color: #e0f0ff;
 }
 
 .form input:focus {
-  outline: 2px solid fuchsia;
+  outline: none;
+  border-color: #3ea6ff;
+  background-color: #253348;
 }
 
 .form button {
-  background-color: #007bff;
-  color: white;
+  background-color: #3ea6ff;
+  color: Black;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .form button:hover {
-  background-color: #0056b3;
+  background-color: #2b8cd6;
 }
 
+/* ================= */
+/* Room Display Area */
+/* ================= */
 .rooms-container {
   margin-top: 200px;
   padding-bottom: 100px;
@@ -71,63 +85,74 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s ease;
+  background-color: #1e2a3c;
+  border: 1px solid #32465a;
 }
 
 .room:hover {
   transform: scale(1.01);
 }
 
-/* Different colors for rooms */
-.pink {
-  background-color: #292030;
-  border-left: 4px solid hotpink;
-}
-.blue {
-  background-color: #1f2633;
-  border-left: 4px solid #3399ff;
-}
-.green {
-  background-color: #1f3326;
-  border-left: 4px solid #66cc66;
-}
-.orange {
-  background-color: #332a1f;
-  border-left: 4px solid orange;
-}
-.purple {
-  background-color: #2b1f33;
-  border-left: 4px solid violet;
-}
-
 .room-header {
   margin-bottom: 10px;
+  font-weight: bold;
+  color: #bcdcff;
 }
 
+/* Room color themes */
+.pink {
+  border-left: 4px solid #ff80ab;
+}
+
+.blue {
+  border-left: 4px solid #3ea6ff;
+}
+
+.green {
+  border-left: 4px solid #00c896;
+}
+
+.orange {
+  border-left: 4px solid #ffae42;
+}
+
+.purple {
+  border-left: 4px solid #c299ff;
+}
+
+/* =============== */
+/* Excel Table View */
+/* =============== */
 .table-excel {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  border: 1px solid fuchsia;
+  border: 1px solid #415a77;
   padding: 10px;
   border-radius: 8px;
-  background-color: #181818;
+  background-color: #16202e;
+}
+.table-excel::-webkit-scrollbar{
+  display:none
 }
 
 .student-column {
-  min-width: 230px;
-  border: 1px solid darkgray;
+  min-width: 400px;
+  border: 1px solid #415a77;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .table-row {
   display: flex;
-  border-bottom: 1px solid #333;
+  align-items: center;
+  border-bottom: 1px solid #2c3e54;
+  gap: 6px;
 }
 
 .table-cell {
   padding: 6px 8px;
-  border-right: 1px solid #444;
+  border-right: 1px solid #32465a;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -137,12 +162,7 @@ body {
   border-right: none;
 }
 
-.header-cell {
-  font-weight: bold;
-  background-color: #333;
-}
-
-/* Specific column width control */
+/* Table Header Cells */
 .slno-header,
 .slno-cell {
   width: 50px;
@@ -157,51 +177,41 @@ body {
 
 .action-header,
 .action-cell {
-  width: 80px;
+  width: 140px;
   justify-content: center;
 }
 
-.delete-btn {
-  background-color:red;
-  color: white;
-  padding: 4px 8px;
-  border: none;
+/* ====================== */
+/* Student ID Input Style */
+/* ====================== */
+.table-row input {
+  padding: 6px 8px;
+  border: 1px solid #415a77;
   border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 13px;
+  width: 100%;
+  max-width: 160px;
+  box-sizing: border-box;
+  background-color: #1e2a3c;
+  color: #e0f0ff;
+  transition: border 0.2s;
 }
 
-.delete-btn:hover {
-  background-color: darkred;
+.table-row input:focus {
+  outline: none;
+  border-color: #3ea6ff;
+  background-color: #253348;
 }
 
-.download-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: darkgreen;
-}
-
-@media (max-width: 480px) {
-  .room {
-    margin-top: 300px;
-  }
-}
-
+/* =============== */
+/* Button Styling  */
+/* =============== */
 .clear-btn {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: crimson;
-  color: white;
+  /* background-color: #ff4d6d; */
+  background-color: #feda75;
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: 16px;
@@ -211,5 +221,71 @@ body {
 }
 
 .clear-btn:hover {
-  background-color: darkred;
+  background-color: #cc3b57;
+}
+
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1ecbe1;
+  color: Black;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0fb2ca;
+}
+
+.edit-btn,
+.save-btn,
+.delete-btn,
+.add-btn {
+  border:1px solid #1e2a3c;
+  background-color: #1e2a3c;
+  color:gray;
+  margin-left: 4px;
+  padding: 4px 8px;
+  /* border: none; */
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.edit-btn:hover {
+  background-color: #4767BA;
+  color: white;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.delete-btn:hover{
+  background-color: #dc3545;
+  color: white;
+}
+
+.add-btn:hover{
+  background-color: #47BA7B;
+  /* background-color: #feda75; */
+  color: White;
+}
+
+/* ========== */
+/* Responsive */
+/* ========== */
+@media (max-width: 480px) {
+  .room {
+    margin-top: 400px;
+  }
+
+  .form input {
+    width: 100%;
+  }
 }
