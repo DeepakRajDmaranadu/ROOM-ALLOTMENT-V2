@@ -3,9 +3,9 @@
 /* ===================== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0d1b2a;
-  color: #e0f0ff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #121212;
+  color: #eaeaea;
 }
 
 .container {
@@ -22,17 +22,17 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #1b263b;
-  padding: 10px 0;
+  background-color: #1c1c1c;
+  padding: 12px 0;
   z-index: 1000;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
   margin-top: 10px;
   padding: 0 20px;
@@ -40,85 +40,73 @@ body {
 
 .form input,
 .form button {
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 9px 14px;
+  font-size: 15px;
+  border-radius: 6px;
   border: none;
 }
 
+/* Inputs */
 .form input {
   width: 160px;
-  border: 1px solid #415a77;
-  border-radius: 6px;
-  font-size: 14px;
-  background-color: #1e2a3c;
-  color: #e0f0ff;
+  background-color: #242424;
+  color: #f1f1f1;
+  border: 1px solid #3a3a3a;
 }
 
 .form input:focus {
   outline: none;
-  border-color: #3ea6ff;
-  background-color: #253348;
+  border-color: #00c2b3;
+  background-color: #2b2b2b;
 }
 
+/* Buttons */
 .form button {
-  background-color: #3ea6ff;
-  color: Black;
+  background-color: #00c2b3;
+  color: #000;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .form button:hover {
-  background-color: #2b8cd6;
+  background-color: #00a89a;
 }
 
 /* ================= */
 /* Room Display Area */
 /* ================= */
 .rooms-container {
-  margin-top: 200px;
+  margin-top: 210px;
   padding-bottom: 100px;
 }
 
 .room {
   margin-bottom: 30px;
   padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
-  background-color: #1e2a3c;
-  border: 1px solid #32465a;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  border: 1px solid #2f2f2f;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .room:hover {
-  transform: scale(1.01);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 .room-header {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #bcdcff;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #00c2b3;
 }
 
-/* Room color themes */
-.pink {
-  border-left: 4px solid #ff80ab;
-}
-
-.blue {
-  border-left: 4px solid #3ea6ff;
-}
-
-.green {
-  border-left: 4px solid #00c896;
-}
-
-.orange {
-  border-left: 4px solid #ffae42;
-}
-
-.purple {
-  border-left: 4px solid #c299ff;
-}
+/* Room accent colors */
+.pink   { border-left: 5px solid #ff6f91; }
+.blue   { border-left: 5px solid #4dabf7; }
+.green  { border-left: 5px solid #3ddc97; }
+.orange { border-left: 5px solid #ffb703; }
+.purple { border-left: 5px solid #b197fc; }
 
 /* =============== */
 /* Excel Table View */
@@ -127,32 +115,34 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  border: 1px solid #415a77;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #16202e;
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #141414;
 }
-.table-excel::-webkit-scrollbar{
-  display:none
+
+.table-excel::-webkit-scrollbar {
+  display: none;
 }
 
 .student-column {
   min-width: 400px;
-  border: 1px solid #415a77;
-  border-radius: 5px;
+  border: 1px solid #333;
+  border-radius: 8px;
   overflow: hidden;
+  background-color: #1b1b1b;
 }
 
 .table-row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #2c3e54;
+  border-bottom: 1px solid #2a2a2a;
   gap: 6px;
 }
 
 .table-cell {
-  padding: 6px 8px;
-  border-right: 1px solid #32465a;
+  padding: 7px 8px;
+  border-right: 1px solid #2f2f2f;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -167,6 +157,7 @@ body {
 .slno-cell {
   width: 50px;
   justify-content: center;
+  color: #ffb703;
 }
 
 .id-header,
@@ -186,21 +177,19 @@ body {
 /* ====================== */
 .table-row input {
   padding: 6px 8px;
-  border: 1px solid #415a77;
+  border: 1px solid #3a3a3a;
   border-radius: 4px;
   font-size: 13px;
   width: 100%;
   max-width: 160px;
-  box-sizing: border-box;
-  background-color: #1e2a3c;
-  color: #e0f0ff;
-  transition: border 0.2s;
+  background-color: #242424;
+  color: #f1f1f1;
 }
 
 .table-row input:focus {
   outline: none;
-  border-color: #3ea6ff;
-  background-color: #253348;
+  border-color: #00c2b3;
+  background-color: #2b2b2b;
 }
 
 /* =============== */
@@ -209,72 +198,71 @@ body {
 .clear-btn {
   margin-top: 10px;
   padding: 10px 20px;
-  /* background-color: #ff4d6d; */
-  background-color: #feda75;
-  color: black;
+  background-color: #ffb703;
+  color: #000;
   border: none;
   border-radius: 6px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
   margin-left: 10px;
 }
 
 .clear-btn:hover {
-  background-color: #cc3b57;
+  background-color: #e0a106;
 }
 
 .download-btn {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #1ecbe1;
-  color: Black;
+  background-color: #3ddc97;
+  color: #000;
   border: none;
   border-radius: 6px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .download-btn:hover {
-  background-color: #0fb2ca;
+  background-color: #2fc086;
 }
 
 .edit-btn,
 .save-btn,
 .delete-btn,
 .add-btn {
-  border:1px solid #1e2a3c;
-  background-color: #1e2a3c;
-  color:gray;
+  border: 1px solid #2f2f2f;
+  background-color: #1f1f1f;
+  color: #aaa;
   margin-left: 4px;
   padding: 4px 8px;
-  /* border: none; */
   border-radius: 4px;
   font-size: 13px;
   cursor: pointer;
-  transition: background 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 .edit-btn:hover {
-  background-color: #4767BA;
-  color: white;
+  background-color: #4dabf7;
+  color: #000;
 }
 
 .save-btn {
-  background-color: #28a745;
-  color: white;
+  background-color: #3ddc97;
+  color: #000;
 }
 
-.delete-btn:hover{
-  background-color: #dc3545;
-  color: white;
+.delete-btn:hover {
+  background-color: #ff6f91;
+  color: #000;
 }
 
-.add-btn:hover{
-  background-color: #47BA7B;
-  /* background-color: #feda75; */
-  color: White;
+.add-btn:hover {
+  background-color: #00c2b3;
+  color: #000;
 }
 
 /* ========== */
@@ -282,7 +270,7 @@ body {
 /* ========== */
 @media (max-width: 480px) {
   .room {
-    margin-top: 400px;
+    margin-top: 420px;
   }
 
   .form input {
